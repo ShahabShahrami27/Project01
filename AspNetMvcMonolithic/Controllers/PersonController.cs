@@ -1,6 +1,7 @@
 ﻿using AspNetMvcMonolithic.ApplicationServices;
 using AspNetMvcMonolithic.ApplicationServices.Contracts;
-using AspNetMvcMonolithic.ApplicationServices.Dtos;
+using AspNetMvcMonolithic.ApplicationServices.Dtos.PersonDtos;
+using AspNetMvcMonolithic.ApplicationServices.Dtos.ProductDtos;
 using AspNetMvcMonolithic.Models.DomainModels.PersonAggregates;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
@@ -70,27 +71,27 @@ namespace AspNetMvcMonolithic.Controllers
                 return NotFound();
             }
 
-            var editPersonDto = new EditPersonDto()
+            var putPersonDto = new PutPersonDto()
             {
                 Id = person.Id,
                 FirstName = person.FirstName,
                 LastName = person.LastName
             };
 
-            return View(editPersonDto);
+            return View(putPersonDto);
         }
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(EditPersonDto editPersonDto)
+        public async Task<IActionResult> Edit(PutPersonDto putPersonDto)
         {
             if (ModelState.IsValid)
             {
-                await _personApplicationService.Edit(editPersonDto);
+                await _personApplicationService.Put(putPersonDto);
 
                 return RedirectToAction(nameof(Index));
             }
 
-            return View(editPersonDto);
+            return View(putPersonDto);
         }
 
         #endregion

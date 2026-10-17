@@ -1,4 +1,4 @@
-﻿namespace AspNetMvcMonolithic.ApplicationServices.Dtos
+﻿namespace AspNetMvcMonolithic.ApplicationServices.Dtos.ProductDtos
 {
     public class PostProductDto
     {

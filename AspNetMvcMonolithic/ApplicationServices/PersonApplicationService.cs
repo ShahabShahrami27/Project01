@@ -1,5 +1,6 @@
 ﻿using AspNetMvcMonolithic.ApplicationServices.Contracts;
-using AspNetMvcMonolithic.ApplicationServices.Dtos;
+using AspNetMvcMonolithic.ApplicationServices.Dtos.PersonDtos;
+using AspNetMvcMonolithic.ApplicationServices.Dtos.ProductDtos;
 using AspNetMvcMonolithic.Models.Services.Contracts;
 
 namespace AspNetMvcMonolithic.ApplicationServices
@@ -56,14 +57,14 @@ namespace AspNetMvcMonolithic.ApplicationServices
         }
 
         #endregion
-        #region [- Edit() -]
-        public async Task Edit(EditPersonDto editPersonDto)
+        #region [- Put() -]
+        public async Task Put(PutPersonDto putPersonDto)
         {
             var person = new Models.DomainModels.PersonAggregates.Person()
             {
-                Id = editPersonDto.Id,
-                FirstName = editPersonDto.FirstName,
-                LastName = editPersonDto.LastName
+                Id = putPersonDto.Id,
+                FirstName = putPersonDto.FirstName,
+                LastName = putPersonDto.LastName
             };
 
             await _personRepository.Update(person);

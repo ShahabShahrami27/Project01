@@ -1,4 +1,5 @@
-﻿using AspNetMvcMonolithic.ApplicationServices.Dtos;
+﻿using AspNetMvcMonolithic.ApplicationServices.Dtos.PersonDtos;
+using AspNetMvcMonolithic.ApplicationServices.Dtos.ProductDtos;
 
 namespace AspNetMvcMonolithic.ApplicationServices.Contracts
 {
@@ -8,6 +9,6 @@ namespace AspNetMvcMonolithic.ApplicationServices.Contracts
         Task<GetPersonDto> GetById(int id);
         Task Post(PostPersonDto postPersonDto);
         Task Delete(DeletePersonDto deletePersonDto);
-        Task Edit(EditPersonDto editPersonDto);
+        Task Put(PutPersonDto putPersonDto);
     }
 }

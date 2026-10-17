@@ -1,5 +1,5 @@
 ﻿using AspNetMvcMonolithic.ApplicationServices.Contracts;
-using AspNetMvcMonolithic.ApplicationServices.Dtos;
+using AspNetMvcMonolithic.ApplicationServices.Dtos.ProductDtos;
 using AspNetMvcMonolithic.Models.DomainModels.ProductAggregates;
 using AspNetMvcMonolithic.Models.Services.Contracts;
 using AspNetMvcMonolithic.Models.Services.Repositories;
@@ -58,15 +58,15 @@ namespace AspNetMvcMonolithic.ApplicationServices
             await _productRepository.Delete(product);
         }
         #endregion
-        #region [- Edit() -]
-        public async Task Edit(EditProductDto editProductDto)
+        #region [- Put() -]
+        public async Task Put(PutProductDto putProductDto)
         {
 
             var product = new Models.DomainModels.ProductAggregates.Product()
             {
-                Id = editProductDto.Id,
-                Title = editProductDto.Title,
-                UnitPrice = editProductDto.UnitPrice
+                Id = putProductDto.Id,
+                Title = putProductDto.Title,
+                UnitPrice = putProductDto.UnitPrice
             };
 
             await _productRepository.Update(product);

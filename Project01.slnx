@@ -1,0 +1,4 @@
+<Solution>
+  <Project Path="AspNetMvcMonolithic/AspNetMvcMonolithic.csproj" Id="12b454d9-55a0-4630-81b9-04738d21990a" />
+  <Project Path="Scaffolding/Scaffolding.csproj" />
+</Solution>

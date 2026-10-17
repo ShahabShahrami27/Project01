@@ -1,7 +1,7 @@
 
 using AspNetMvcMonolithic.ApplicationServices;
 using AspNetMvcMonolithic.ApplicationServices.Contracts;
-using AspNetMvcMonolithic.ApplicationServices.Dtos;
+using AspNetMvcMonolithic.ApplicationServices.Dtos.ProductDtos;
 using AspNetMvcMonolithic.Models;
 using AspNetMvcMonolithic.Models.DomainModels.ProductAggregates;
 using Microsoft.AspNetCore.Mvc;
@@ -68,27 +68,27 @@ public class ProductController : Controller
             return NotFound();
         }
 
-        var editProductDto = new EditProductDto()
+        var putProductDto = new PutProductDto()
         {
             Id = product.Id,
             Title = product.Title,
             UnitPrice = product.UnitPrice
         };
 
-        return View(editProductDto);
+        return View(putProductDto);
     }
     [HttpPost]
     [ValidateAntiForgeryToken]
-    public async Task<IActionResult> Edit(EditProductDto editProductDto)
+    public async Task<IActionResult> Edit(PutProductDto putProductDto)
     {
         if (ModelState.IsValid)
         {
-            await _productApplicationService.Edit(editProductDto);
+            await _productApplicationService.Put(putProductDto);
 
             return RedirectToAction(nameof(Index));
         }
 
-        return View(editProductDto);
+        return View(putProductDto);
     }
     #endregion
     #region [- Details() -]

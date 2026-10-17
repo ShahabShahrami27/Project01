@@ -1,6 +1,6 @@
-﻿namespace AspNetMvcMonolithic.ApplicationServices.Dtos
+﻿namespace AspNetMvcMonolithic.ApplicationServices.Dtos.ProductDtos
 {
-    public class DeleteProductDto
+    public class GetProductDto
     {
         public int Id { get; set; }
         public string Title { get; set; }
