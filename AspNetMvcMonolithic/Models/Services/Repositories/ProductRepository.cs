@@ -6,13 +6,15 @@ namespace AspNetMvcMonolithic.Models.Services.Repositories
 {
     public class ProductRepository : IProductRepository
     {
+        private readonly ProjectDbContext _applicationDbContext;
+
         #region [- Ctor -]
-        private readonly ApplicationDbContext _applicationDbContext;
-        public ProductRepository(ApplicationDbContext applicationDbContext)
+        public ProductRepository(ProjectDbContext applicationDbContext)
         {
             _applicationDbContext = applicationDbContext;
         }
         #endregion
+
         #region [- SelectAll() -]
         public async Task<List<Product>> SelectAll()
         {
@@ -26,6 +28,7 @@ namespace AspNetMvcMonolithic.Models.Services.Repositories
             }
         }
         #endregion
+
         #region [- SelectById() -]
         public async Task<Product> SelectById(int id)
         {
@@ -40,6 +43,7 @@ namespace AspNetMvcMonolithic.Models.Services.Repositories
             }
         }
         #endregion
+
         #region [- Insert() -]
         public async Task Insert(Product product)
         {
@@ -54,6 +58,7 @@ namespace AspNetMvcMonolithic.Models.Services.Repositories
             }
         }
         #endregion
+
         #region [- Delete() -]
         public async Task Delete(Product product)
         {
@@ -68,6 +73,7 @@ namespace AspNetMvcMonolithic.Models.Services.Repositories
             }
         }
         #endregion
+
         #region [- Update() -]
         public async Task Update(Product product)
         {
@@ -84,5 +90,6 @@ namespace AspNetMvcMonolithic.Models.Services.Repositories
             }
         }
         #endregion
+
     }
 }

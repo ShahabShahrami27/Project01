@@ -8,7 +8,8 @@ using Microsoft.EntityFrameworkCore;
 var builder = WebApplication.CreateBuilder(args);
 var connectionString = builder.Configuration.GetConnectionString("ApplicationDbContext") ?? throw new InvalidOperationException("Connection string 'ApplicationDbContext' not found.");
 
-builder.Services.AddDbContext<ApplicationDbContext>();
+builder.Services.AddDbContext<ProjectDbContext>(options => options.UseSqlServer(connectionString));
+
 
 builder.Services.AddScoped<IPersonRepository, PersonRepository>();
 builder.Services.AddScoped<IPersonApplicationService, PersonApplicationService>();

@@ -10,13 +10,15 @@ namespace AspNetMvcMonolithic.Controllers
 {
     public class PersonController : Controller
     {
-        #region [- Ctor -]
         private readonly IPersonApplicationService _personApplicationService;
+
+        #region [- Ctor -]
         public PersonController(IPersonApplicationService personApplicationService)
         {
             _personApplicationService = personApplicationService;
         }
         #endregion
+
         #region [- Index() -]
         public async Task<IActionResult> Index()
         {
@@ -25,6 +27,7 @@ namespace AspNetMvcMonolithic.Controllers
         }
 
         #endregion
+
         #region [- Create() -]
         public IActionResult Create()
         {
@@ -46,6 +49,7 @@ namespace AspNetMvcMonolithic.Controllers
         }
 
         #endregion
+
         #region [- Delete() -]
         public async Task<IActionResult> Delete(int id)
         {
@@ -59,6 +63,7 @@ namespace AspNetMvcMonolithic.Controllers
             return RedirectToAction(nameof(Index));
         }
         #endregion
+
         #region [- Edit() -]
         public async Task<IActionResult> Edit(int id)
         {
@@ -95,10 +100,11 @@ namespace AspNetMvcMonolithic.Controllers
         }
 
         #endregion
+
         #region [- Details() -]
-        public async Task<IActionResult> Details(int id)
+        public async Task<IActionResult> Details(GetPersonDto getPersonDto)
         {
-            var person = await _personApplicationService.GetById(id);
+            var person = await _personApplicationService.GetById(getPersonDto);
 
             if (person == null)
             {
@@ -108,5 +114,6 @@ namespace AspNetMvcMonolithic.Controllers
             return View(person);
         } 
         #endregion
+
     }
 }

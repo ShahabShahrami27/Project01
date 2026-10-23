@@ -6,13 +6,15 @@ namespace AspNetMvcMonolithic.Models.Services.Repositories
 {
     public class PersonRepository : IPersonRepository
     {
+        private readonly ProjectDbContext _applicationDbContext;
+
         #region [- Ctor -]
-        private readonly ApplicationDbContext _applicationDbContext;
-        public PersonRepository(ApplicationDbContext applicationDbContext)
+        public PersonRepository(ProjectDbContext applicationDbContext)
         {
             _applicationDbContext = applicationDbContext;
         }
         #endregion
+
         #region [- SelectAll() -]
         public async Task<List<Person>> SelectAll()
         {
@@ -26,6 +28,7 @@ namespace AspNetMvcMonolithic.Models.Services.Repositories
             }
         }
         #endregion
+
         #region [- SelectById() -]
         public async Task<Person> SelectById(int id)
         {
@@ -40,6 +43,7 @@ namespace AspNetMvcMonolithic.Models.Services.Repositories
             }
         }
         #endregion
+
         #region [- Insert() -]
         public async Task Insert(Person person)
         {
@@ -54,6 +58,7 @@ namespace AspNetMvcMonolithic.Models.Services.Repositories
             }
         }
         #endregion
+
         #region [- Delete() -]
         public async Task Delete(Person person)
         {
@@ -68,6 +73,7 @@ namespace AspNetMvcMonolithic.Models.Services.Repositories
             }
         }
         #endregion
+
         #region [- Update() -]
         public async Task Update(Person person)
         {
@@ -83,5 +89,6 @@ namespace AspNetMvcMonolithic.Models.Services.Repositories
             }
         }
         #endregion
+
     }
 }

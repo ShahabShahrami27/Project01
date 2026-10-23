@@ -467,10 +467,11 @@ F:\Asp.Net\Project01\Scaffolding\obj\Debug\net10.0\staticwebassets.build.json.ca
 F:\Asp.Net\Project01\Scaffolding\obj\Debug\net10.0\staticwebassets.development.json
 F:\Asp.Net\Project01\Scaffolding\obj\Debug\net10.0\staticwebassets.build.endpoints.json
 F:\Asp.Net\Project01\Scaffolding\obj\Debug\net10.0\swae.build.ex.cache
-F:\Asp.Net\Project01\Scaffolding\obj\Debug\net10.0\staticwebassets.upToDateCheck.txt
 F:\Asp.Net\Project01\Scaffolding\obj\Debug\net10.0\Scaffold.A78B2C87.Up2Date
 F:\Asp.Net\Project01\Scaffolding\obj\Debug\net10.0\Scaffolding.dll
 F:\Asp.Net\Project01\Scaffolding\obj\Debug\net10.0\refint\Scaffolding.dll
 F:\Asp.Net\Project01\Scaffolding\obj\Debug\net10.0\Scaffolding.pdb
 F:\Asp.Net\Project01\Scaffolding\obj\Debug\net10.0\Scaffolding.genruntimeconfig.cache
 F:\Asp.Net\Project01\Scaffolding\obj\Debug\net10.0\ref\Scaffolding.dll
+F:\Asp.Net\Project01\Scaffolding\obj\Debug\net10.0\Scaffolding.sourcelink.json
+F:\Asp.Net\Project01\Scaffolding\obj\Debug\net10.0\staticwebassets.upToDateCheck.txt

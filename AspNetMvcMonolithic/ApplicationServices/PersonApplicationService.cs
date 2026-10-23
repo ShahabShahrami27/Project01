@@ -7,13 +7,15 @@ namespace AspNetMvcMonolithic.ApplicationServices
 {
     public class PersonApplicationService : IPersonApplicationService
     {
-        #region [- Ctor -]
         private readonly IPersonRepository _personRepository;
+
+        #region [- Ctor -]
         public PersonApplicationService(IPersonRepository personRepository)
         {
             _personRepository = personRepository;
         }
         #endregion
+
         #region [- Post() -]
         public async Task Post(PostPersonDto postPersonDto)
         {
@@ -26,6 +28,7 @@ namespace AspNetMvcMonolithic.ApplicationServices
         }
 
         #endregion
+
         #region [- GetAllPerson() -]
         public async Task<List<GetPersonDto>> GetAllPerson()
         {
@@ -45,6 +48,7 @@ namespace AspNetMvcMonolithic.ApplicationServices
             return getPersonDtos;
         }
         #endregion
+
         #region [- Delete() -]
         public async Task Delete(DeletePersonDto deletePersonDto)
         {
@@ -57,6 +61,7 @@ namespace AspNetMvcMonolithic.ApplicationServices
         }
 
         #endregion
+
         #region [- Put() -]
         public async Task Put(PutPersonDto putPersonDto)
         {
@@ -70,26 +75,27 @@ namespace AspNetMvcMonolithic.ApplicationServices
             await _personRepository.Update(person);
         }
         #endregion
+
         #region [- GetById() -]
-        public async Task<GetPersonDto> GetById(int id)
+        public async Task<GetPersonDto> GetById(GetPersonDto getPersonDto)
         {
-            var person = await _personRepository.SelectById(id);
+            var person = await _personRepository.SelectById(getPersonDto.Id);
 
             if (person == null)
             {
                 return null;
             }
 
-            var getPersonDto = new GetPersonDto()
+            var result = new GetPersonDto()
             {
                 Id = person.Id,
                 FirstName = person.FirstName,
                 LastName = person.LastName
             };
 
-            return getPersonDto;
-        } 
+            return result;
+        }
         #endregion
+
     }
 }
-

@@ -452,7 +452,6 @@ F:\Asp.Net\Project01\AspNetMvcMonolithic\obj\Debug\net10.0\staticwebassets.build
 F:\Asp.Net\Project01\AspNetMvcMonolithic\obj\Debug\net10.0\staticwebassets.development.json
 F:\Asp.Net\Project01\AspNetMvcMonolithic\obj\Debug\net10.0\staticwebassets.build.endpoints.json
 F:\Asp.Net\Project01\AspNetMvcMonolithic\obj\Debug\net10.0\swae.build.ex.cache
-F:\Asp.Net\Project01\AspNetMvcMonolithic\obj\Debug\net10.0\staticwebassets.upToDateCheck.txt
 F:\Asp.Net\Project01\AspNetMvcMonolithic\obj\Debug\net10.0\AspNetMv.32843430.Up2Date
 F:\Asp.Net\Project01\AspNetMvcMonolithic\obj\Debug\net10.0\AspNetMvcMonolithic.dll
 F:\Asp.Net\Project01\AspNetMvcMonolithic\obj\Debug\net10.0\refint\AspNetMvcMonolithic.dll
@@ -468,3 +467,4 @@ F:\Asp.Net\Project01\AspNetMvcMonolithic\bin\Debug\net10.0\runtimes\win-arm64\na
 F:\Asp.Net\Project01\AspNetMvcMonolithic\bin\Debug\net10.0\runtimes\win-x64\native\msalruntime.dll
 F:\Asp.Net\Project01\AspNetMvcMonolithic\bin\Debug\net10.0\runtimes\win-x86\native\msalruntime_x86.dll
 F:\Asp.Net\Project01\AspNetMvcMonolithic\obj\Debug\net10.0\AspNetMvcMonolithic.sourcelink.json
+F:\Asp.Net\Project01\AspNetMvcMonolithic\obj\Debug\net10.0\staticwebassets.upToDateCheck.txt

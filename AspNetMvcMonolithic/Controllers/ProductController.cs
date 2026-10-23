@@ -9,13 +9,15 @@ using Microsoft.EntityFrameworkCore;
 
 public class ProductController : Controller
 {
-    #region [- ctor -]
     private readonly IProductApplicationService _productApplicationService;
+
+    #region [- ctor -]
     public ProductController(IProductApplicationService productApplicationService)
     {
         _productApplicationService = productApplicationService;
     }
     #endregion
+
     #region [- Index -]
     public async Task<IActionResult> Index()
     {
@@ -23,6 +25,7 @@ public class ProductController : Controller
         return View(result);
     }
     #endregion
+
     #region [- Create() -]
     public IActionResult Create()
     {
@@ -43,6 +46,7 @@ public class ProductController : Controller
         }
     }
     #endregion
+
     #region [- Delete() -]
     public async Task<IActionResult> Delete(int id)
     {
@@ -56,6 +60,7 @@ public class ProductController : Controller
         return RedirectToAction(nameof(Index));
     }
     #endregion
+
     #region [- Edit() -]
     public async Task<IActionResult> Edit(int id)
     {
@@ -91,10 +96,11 @@ public class ProductController : Controller
         return View(putProductDto);
     }
     #endregion
+
     #region [- Details() -]
-    public async Task<IActionResult> Details(int id)
+    public async Task<IActionResult> Details(GetProductDto getProductDto)
     {
-        var product = await _productApplicationService.GetById(id);
+        var product = await _productApplicationService.GetById(getProductDto);
 
         if (product == null)
         {
@@ -104,4 +110,5 @@ public class ProductController : Controller
         return View(product);
     } 
     #endregion
+
 }

@@ -8,14 +8,16 @@ namespace AspNetMvcMonolithic.ApplicationServices
 {
     public class ProductApplicationService : IProductApplicationService
     {
-        #region [- Ctor -]
         private readonly IProductRepository _productRepository;
+
+        #region [- Ctor -]
         public ProductApplicationService(IProductRepository productRepository)
         {
             _productRepository = productRepository;
         }
 
         #endregion
+
         #region [- GetAllProduct() -]
         public async Task<List<GetProductDto>> GetAllProduct()
         {
@@ -36,6 +38,7 @@ namespace AspNetMvcMonolithic.ApplicationServices
 
         }
         #endregion
+
         #region [- Post() -]
         public async Task Post(PostProductDto postProductDto)
         {
@@ -47,6 +50,7 @@ namespace AspNetMvcMonolithic.ApplicationServices
             await _productRepository.Insert(product);
         }
         #endregion
+
         #region [- Delete() -]
         public async Task Delete(DeleteProductDto deleteProductDto)
         {
@@ -58,6 +62,7 @@ namespace AspNetMvcMonolithic.ApplicationServices
             await _productRepository.Delete(product);
         }
         #endregion
+
         #region [- Put() -]
         public async Task Put(PutProductDto putProductDto)
         {
@@ -72,26 +77,28 @@ namespace AspNetMvcMonolithic.ApplicationServices
             await _productRepository.Update(product);
         }
         #endregion
+
         #region [- GetById() -]
-        public async Task<GetProductDto> GetById(int Id)
+        public async Task<GetProductDto> GetById(GetProductDto getProductDto)
         {
 
-            var product = await _productRepository.SelectById(Id);
+            var product = await _productRepository.SelectById(getProductDto.Id);
 
             if (product == null)
             {
                 return null;
             }
 
-            var getProductDto = new GetProductDto()
+            var result = new GetProductDto()
             {
                 Id = product.Id,
                 Title = product.Title,
                 UnitPrice = product.UnitPrice
             };
 
-            return getProductDto;
+            return result;
         } 
         #endregion
+
     }
 }
